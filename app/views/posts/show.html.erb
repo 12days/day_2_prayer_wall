@@ -2,5 +2,13 @@
   Posted By: <em>Anonymous at <%= @post.created_at.ctime %></em>
 </h1>
 <p><%= @post.body %></p>
-
+<br>
+<% if @post.comments %>
+  Comments:
+  <br><br>
+  <% @post.comments.each_with_index do |comment, i| %>
+    <%= render partial: 'shared/comment_show', :locals => { :comment => comment, :i => (i + 1) } %>
+  <% end %>
+  <br>
+<% end %>
 <%= render partial: 'shared/comment_form' %>

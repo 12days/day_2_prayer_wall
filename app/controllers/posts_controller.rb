@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.includes(:comments).find(params[:id])
     @comment = Comment.new
   end
 
@@ -25,11 +25,19 @@ class PostsController < ApplicationController
   end
 
   def update
+    @post = Post.find(params[:id])
+    @post.comments.build(comment_params)
+    @post.save
+    redirect_to post_path(@post)
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:body)
+      params.require(:post).permit(:body, :comment_params)
+    end
+
+    def comment_params
+      params.require(:comment).permit!
     end
 end
