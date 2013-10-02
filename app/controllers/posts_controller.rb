@@ -31,6 +31,11 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def pray
+    Prayer.find_or_create_by(user_id: User.current, post_id: params[:post_id])
+    render status: 200
+  end
+
   private
 
     def post_params
