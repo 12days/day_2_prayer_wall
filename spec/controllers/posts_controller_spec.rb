@@ -29,6 +29,9 @@ describe PostsController do
     context 'with valid attributes' do
       it 'creates new post' do
       end
+
+      it 'redirects to the new contact' do
+      end
     end
 
     context 'with invalid attributes' do
