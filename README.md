@@ -1,28 +1,41 @@
-== README
+Day 2 - Prayer App
+==================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Getting started
+To clone this repo, go to your shell:
 
-Things you may want to cover:
+$ `git@github.com:12days/day_2_prayer_wall.git`
 
-* Ruby version
+If you want to generate from scratch:
 
-* System dependencies
+$ `rails new your_app_name`
 
-* Configuration
+Then, after you go into that folder:
+* $ `bundle install`
 
-* Database creation
+### Gemfile notes
 
-* Database initialization
+As usual, we wanted to take test-driven-development approach, so we added rspec. To see how you add it to Gemfile and install it, see [rspec-rails repository](https://github.com/rspec/rspec-rails).
 
-* How to run the test suite
+We also wantd to use twitter-bootstrap for our views. Too see how to add it to Gemfile, see [twitter-bootstrap-rails](https://github.com/seyhunak/twitter-bootstrap-rails).
 
-* Services (job queues, cache servers, search engines, etc.)
+* I ran into some trouble when I had bootstrap under `:assets` group, so took it out of the grouping.
 
-* Deployment instructions
+If you plan to deploy to heroku, then sqlite3 will conflict with production database. You can check the Gemfile for details, and may also want to review this article [SQLite on Heroku](https://devcenter.heroku.com/articles/sqlite3).
 
-* ...
+### Process
 
+As before with project 1, our general process during the day was:
+1. Talk through general features we would want our app to do, and keep things very __simple__.
+2. Write out some basic user stories pertaining to our app. Here is an example: _As a user, I want to be able to share a ‘prayer request’ with the world by anonymously posting it. There should be nothing that would ID a posting user. (As a design element, the site would explicitly note that the post was by an anon user.)_. We had a few such bullets.
+3. Generate the app, and create a framework for testing.
+4. Build a feature. (Generally, we pair, but in certain instances, we also agreed to split off by creating a feature branch and working separately. We will then create [pull request](https://help.github.com/articles/using-pull-requests) back to master branch.)
+5. Re-assess our progress. Are we on schedule, ahead, or behind?
+6. Talk about where we are, document issues, and repeat the process.
+7. At the end of the day after deploying, we'll take time to reflect. As noted I'll be blogging about it on [findinbay.blogspot.com](findinbay.blogspot.com).
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### Contact ###
+If you have other questions, please write: David <daviddarden11@gmail.com> or Josh <joshua.j.wilborn@gmail.com>.
+
+### Link to 12 Days Project
+What is all of this about? To learn more, check out the project home page and list of our projects at [12days 12projects](http://12days.github.io/).
