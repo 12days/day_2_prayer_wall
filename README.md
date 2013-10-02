@@ -23,9 +23,12 @@ We also wantd to use twitter-bootstrap for our views. Too see how to add it to G
 
 If you plan to deploy to heroku, then sqlite3 will conflict with production database. You can check the Gemfile for details, and may also want to review this article [SQLite on Heroku](https://devcenter.heroku.com/articles/sqlite3).
 
+We also wanted to have some authentication in order that an anonymous user can _'pray'_ for someone. So we needed authentication. To keep things simple, we decided to try [sorcery](https://github.com/NoamB/sorcery).
+
 ### Process
 
 As before with project 1, our general process during the day was:
+
 1. Talk through general features we would want our app to do, and keep things very __simple__.
 2. Write out some basic user stories pertaining to our app. Here is an example: _As a user, I want to be able to share a ‘prayer request’ with the world by anonymously posting it. There should be nothing that would ID a posting user. (As a design element, the site would explicitly note that the post was by an anon user.)_. We had a few such bullets.
 3. Generate the app, and create a framework for testing.
