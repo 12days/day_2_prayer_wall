@@ -1,10 +1,15 @@
 class PostsController < ApplicationController
   def index
-
+    @posts = Post.last(10)
   end
 
   def create
-    Post.create(post_params)
+    post = Post.new(post_params)
+    if post.save
+      redirect_to post_path(post)
+    else
+      render :new
+    end
   end
 
   def new
@@ -13,6 +18,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def destroy
