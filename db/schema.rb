@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002223126) do
+ActiveRecord::Schema.define(version: 20131003004035) do
 
   create_table "comments", force: true do |t|
     t.string   "body"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20131002223126) do
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "prayers", force: true do |t|
