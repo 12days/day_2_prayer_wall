@@ -1,6 +1,5 @@
 class CreatePrayers < ActiveRecord::Migration
   def change
-    drop_table :prayers
 
     create_table :prayers do |t|
       t.integer :user_id
