@@ -4,6 +4,7 @@ gem 'rails', '4.0.0'
 
 gem 'twitter-bootstrap-rails'
 gem 'therubyracer', platforms: :ruby
+gem 'sorcery'
 
 group :assets do
   gem 'sass-rails', '~> 4.0.0'
