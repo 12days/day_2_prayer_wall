@@ -1,6 +1,13 @@
 <h4>
   Posted By: <em>Anonymous at <%= @post.created_at.ctime %></em>
   <%= @post.prayers.count %> have prayed for this.
+  <br>
+  <% if Prayer.all.where(:user_id => current_user.id, :post_id => @post.id).empty? %>
+    <%= link_to "Click to show that you prayed for this!", post_pray_path(@post) %>
+  <% else %>
+    <%= "you prayed for this" %>
+  <% end %>
+
 </h4>
 <p><%= @post.body %></p>
 <br>
